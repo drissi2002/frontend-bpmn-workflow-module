@@ -1,20 +1,16 @@
-# Use Node.js 16.13.0 as the base image
-FROM node:16.13.0
+# Use official node image as the base image
+FROM node:16.13.0 as build
 
-# Set the working directory in the container
-WORKDIR /usr/src/app
+# Set the working directory
+WORKDIR /usr/local/app
 
-# Copy package.json and package-lock.json to the container
-COPY package.json package-lock.json ./
+# Add the source code to app
+COPY ./ /usr/local/app/
 
-# Install project dependencies
-RUN npm ci --only=production
+# Install all the dependencies
+RUN npm ic
 
-# Copy the entire project to the container
-COPY . .
+# Generate the build of the application
+RUN npm install -g @angular/cli@14.2.7
 
-# Expose the port on which the Angular app will run (default is 4200)
-EXPOSE 4200
-
-# Start the Angular app using ng serve
-CMD ["npx", "ng", "serve", "--host", "0.0.0.0", "--port", "4200"]
+CMD ng serve --host 0.0.0.0
