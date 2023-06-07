@@ -7,9 +7,9 @@
        <!-- Button for importing JSON form schema -->
        <input class ="form-control" type="file"  #fileInput  (change)="importFormJson($event)" style="display:none;">
        <button *ngIf="!isUpdate" class="btn btn-transparent text-white" style="border-radius:10px; border: 2px solid #e9e9e9;" (click)="fileInput.click()">Import Form</button>
-        <!-- Table -->
+        <!-- form editor -->
       <div class="card" style="margin-top:10px;border-radius: 5px ;border: 2px solid #ccc;">
-        <div #canvas style="border-radius: 5px ;width: 100%; height:100%;"></div>
+        <div #canvas  style="border-radius: 5px"></div>
       </div>
     </div>
 </div>

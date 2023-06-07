@@ -75,6 +75,12 @@ a.fjs-powered-by-link {
   
     height: 100%;
   }
+
+  .fjs-form-container .fjs-editor-palette-container  .fjs-editor-properties-container {
+    display: flex!important;
+    flex-direction: column !important;
+    flex: 1 !important;
+  } 
   
   /**
    * Layout styles
@@ -765,7 +771,15 @@ a.fjs-powered-by-link {
     display: flex;
   }
   
-  .fjs-editor-container .fjs-form-editor {
+  .fjs-editor-container {
+    display: flex !important;
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    z-index: 0;
+  }
+  
+  .fjs-form-editor {
     display: flex;
     flex: 1;
     flex-direction: row;
@@ -879,7 +893,8 @@ a.fjs-powered-by-link {
    * Palette
    */
   .fjs-editor-container .fjs-palette-container {
-    height: 100%;
+    max-width: 100% !important;
+    height: auto !important;
   }
   .fjs-palette-group-title{
     margin-left: 10px;
