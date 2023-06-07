@@ -41,7 +41,7 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                 </div>
-                <input class="form-control" placeholder="Email" type="email" [(ngModel)]="email" required>
+                <input class="form-control" placeholder="Email" type="email" name="email" [(ngModel)]="email" required>
               </div>
             </div>
             <div class="form-group">
@@ -49,10 +49,14 @@
                 <div class="input-group-prepend">
                   <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                 </div>
-                <input class="form-control"  placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
+                <input class="form-control" placeholder="Password" type="password" name="password" [(ngModel)]="password" required>
               </div>
             </div>
-            <div class="text-muted font-italic"><small>password strength: <span [ngClass]="{'text-danger': passwordStrength === 'weak', 'text-orange': passwordStrength === 'medium', 'text-success': passwordStrength === 'strong'}">{{ passwordStrength }}</span></small></div>
+            <div class="text-muted font-italic">
+              <small>password strength:
+                <span [ngClass]="{'text-danger': passwordStrength === 'weak', 'text-orange': passwordStrength === 'medium', 'text-success': passwordStrength === 'strong'}">{{ passwordStrength }}</span>
+              </small>
+            </div>
             <div class="text-center">
               <button type="submit" class="btn btn-primary mt-4">Create account</button>
             </div>
